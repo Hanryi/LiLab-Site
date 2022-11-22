@@ -44,6 +44,7 @@
             <div id="rightArrow" class="iconfont icon-arrow-right"></div>
             <div id="sliderBtn"></div>
         </div>
+        
         <!-- <img src="img/home/1.jpg"> -->
         <!-- <div class="banner-info">
             <p>Welcome to Li Lab</p>
@@ -143,13 +144,15 @@
         });
     }
 
-
     (function start() {
+        var client_width = document.body.clientWidth
         var config = {
-            height: "477px", // 配置高度
+            width: client_width * 0.8 + 'px',
+            height: client_width * 0.8 * 0.3975 + 'px',
             interval: 5000 // 配置轮播时间间隔
         }
         var carousel = document.getElementById("carousel"); //获取容器对象的引用
+        carousel.style.width = config.width; // 将轮播容器宽度设定
         carousel.style.height = config.height; // 将轮播容器高度设定
         document.querySelectorAll("#carousel img").forEach((v,i) => {
             imgArr.push(v); // 获取所有图片组成数组
