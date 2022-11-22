@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li Lab</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1582902_u0zm91pv15i.css">
+</head>
+<body>
+    <div id="header">
+        <a id="top-logo" href="./index.html">
+            <span>Zea&ensp;Systems&ensp;Biology&ensp;Lab</span>
+        </a>
+        <div id="top-navi">
+            <a class="top-navigator" href="./index.html">
+                <span>Home</span>
+            </a>
+            <a class="top-navigator" href="./research.html">
+                <span>Research</span>
+            </a>
+            <a class="top-navigator" href="./publication.html">
+                <span>Publication</span>
+            </a>
+            <div class="top-navigator menu-bar">
+                <span>Resource</span>
+                <div class="sub-menu">
+                    <a class="menu-option" href="./dataset.html">data set</a>
+                    <a class="menu-option" href="./tools.html">tools</a>
+                </div>
+            </div>
+            <a class="top-navigator" href="./people.html">
+                <span>People</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="carousel">
+            <img src="img/home/1.jpg">
+            <img src="img/home/2.jpg">
+            <div id="leftArrow" class="iconfont icon-arrow-lift"></div>    
+            <div id="rightArrow" class="iconfont icon-arrow-right"></div>
+            <div id="sliderBtn"></div>
+        </div>
+        <!-- <img src="img/home/1.jpg"> -->
+        <!-- <div class="banner-info">
+            <p>Welcome to Li Lab</p>
+        </div> -->
+        <div id="publicity">
+            <div class="slogan">
+                <span>Collaborative</span>
+                <span class="separator">|</span> 
+                <span>Hard-working</span>
+                <span class="separator">|</span>
+                <span>Innovative</span>
+            </div>
+            <div class="brief-introduce">
+                <span>
+                    Li Lab is a laboratory dedicated to smart agriculture and 
+                    systems biology
+                </span>
+            </div>
+            <div class="news">
+                <div class="news-title">News</div>
+                <div class="vertical-line"></div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="contact-title">Contact Us</div>
+            <div class="contact-address">
+                National Key Laboratory of Crop Improvement
+            </div>
+            <div class="contact-address">
+                College of Plant Science and Technology
+            </div>
+            <div class="contact-address">
+                HuaZhong Agricultural University. Wuhan, Hubei, China
+            </div>
+            <div class="contact-address">
+                Tel: +86-13247181095
+            </div>
+            <div class="contact-address">
+                Email: hzaulilin@mail.hzau.edu.cn
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <span>Copyright &copy; 2022 Li Lab</span>
+    </div>
+</body>
+<script type="text/javascript">
+    var imgArr = []; // 图片数组
+    var curIndex = 0; // 当前显示图片
+    var timer = null; // 定时器
+    var btnList = []; // 右下角切换按钮组
+    
+    function slide(targetIndex = curIndex + 1){
+        curIndex = targetIndex % imgArr.length; // 获取当前index
+        imgArr.forEach((v) => v.className = "" ); // 设置其他图片隐藏
+        imgArr[curIndex] .className = "imgActive"; // 设置当前index图片显示
+        btnList.forEach(v => v.className = "unitBtn") // 设置其他按钮为灰色
+        btnList[curIndex] .className = "unitBtn btnActive"; // 设置当前按钮为蓝色
+    }
+
+    function createBtnGroup(carousel,config){
+        document.getElementById("leftArrow").addEventListener('click',(e) => { 
+            clearInterval(timer); // 清除定时器，避免手动切换时干扰
+            slide(curIndex-1); // 允许点击则切换上一张
+            timer = setInterval(() => {slide()},config.interval); // 重设定时器
+        }) 
+        document.getElementById("rightArrow").addEventListener('click',(e) => {
+            clearInterval(timer); // 清除定时器，避免手动切换时干扰
+            slide(curIndex+1); // 允许点击则切换下一张
+            timer = setInterval(() => {slide()},config.interval); // 重设定时器
+        }) 
+        var sliderBtn = document.getElementById("sliderBtn"); // 获取按钮容器的引用
+        imgArr.forEach((v,i) => {
+            let btn = document.createElement("div"); // 制作按钮
+            btn.className = i === 0 ?  "unitBtn btnActive" : "unitBtn"; // 初设蓝色与灰色按钮样式
+            btn.addEventListener('click',(e) => {
+                clearInterval(timer); // 清除定时器，避免手动切换时干扰
+                slide(i); // // 允许点击则切换
+                timer = setInterval(() => {slide()},config.interval); // 重设定时器
+            }) 
+            btnList.push(btn); // 添加按钮到按钮组
+            sliderBtn.appendChild(btn); // 追加按钮到按钮容器
+        })
+    }
+
+    function eventDispose(carousel,config){
+        document.addEventListener('visibilitychange',function(){ // 浏览器切换页面会导致动画出现问题，监听页面切换
+            if(document.visibilityState=='hidden') clearInterval(timer); // 页面隐藏清除定时器
+            else timer = setInterval(() => {slide()},config.interval); // 重设定时器
+        });
+        carousel.addEventListener('mouseover',function(){ // 鼠标移动到容器则不切换动画，停止计时器
+            clearInterval(timer); // 页面隐藏清除定时器
+        });
+        carousel.addEventListener('mouseleave',function(){ // 鼠标移出容器则开始动画
+            timer = setInterval(() => {slide()},config.interval); // 重设定时器
+        });
+    }
+
+
+    (function start() {
+        var config = {
+            height: "477px", // 配置高度
+            interval: 5000 // 配置轮播时间间隔
+        }
+        var carousel = document.getElementById("carousel"); //获取容器对象的引用
+        carousel.style.height = config.height; // 将轮播容器高度设定
+        document.querySelectorAll("#carousel img").forEach((v,i) => {
+            imgArr.push(v); // 获取所有图片组成数组
+            v.className = i === 0 ?  "imgActive" : "";
+        }); 
+        eventDispose(carousel,config); // 对一些浏览器事件处理
+        createBtnGroup(carousel,config); // 按钮组的处理
+        timer = setInterval(() => {slide()},config.interval); // 设置定时器定时切换
+    })();
+</script>
+</html>

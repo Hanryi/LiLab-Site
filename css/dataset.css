@@ -1,0 +1,55 @@
+.dataset-block {
+    margin: 44px 44px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.dataset-block .dataset {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 80%;
+    min-width: 500px;
+}
+.dataset-block .dataset .dataset-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.dataset-block .dataset .dataset-text {
+    margin: 10px 0px;
+}
+.dataset-block .dataset .download-area {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.dataset-block .dataset .download-area .download-area-title {
+    margin: 10px;
+    font-weight: bold;
+}
+.dataset-block .dataset .download-area .download-area-num {
+    font-weight: bold;
+    margin-left: 5px;
+    color: red;
+}
+.dataset-block .dataset .download-area .dataset-unit {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.dataset-block .dataset .download-area .dataset-link {
+    text-align: right;
+    display: inline-block;
+    color: green;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.dataset-block .dataset .download-area .dataset-link:hover {
+    color: black;
+}

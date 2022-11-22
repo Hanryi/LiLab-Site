@@ -1,0 +1,42 @@
+.software-block {
+    margin: 44px 44px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.software-block .software {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 500px;
+}
+.software-block .software .software-name {
+    text-align: center;
+    font-size: 20px;
+}
+.software-block .software .software-category {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: brown;
+}
+.software-block .software .software-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    line-height: 20px;
+}
+.software-block .software .software-link:hover {
+    color: black;
+}
+a svg {
+    color: green;
+}

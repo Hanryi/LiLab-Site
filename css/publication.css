@@ -1,0 +1,25 @@
+.year-line {
+    margin: 22px 44px;
+}
+.year-line:first-child {
+    margin-top: 44px;
+}
+.year-line:last-child {
+    margin-bottom: 44px;
+}
+.year-line .year-time {
+    letter-spacing: 5px;
+    font-size: 18px;
+}
+.year-line .paper-block .paper {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.year-line .paper-block .paper a:hover {
+    cursor: pointer;
+    color: brown;
+}
+.year-line .paper-block .paper a,a:visited {
+    color: black;
+}

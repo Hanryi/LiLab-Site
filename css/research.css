@@ -1,0 +1,22 @@
+.research-title {
+    margin: 44px;
+    display: flex;
+    align-items: center;
+}
+.research-header {
+    font-size: 30px;
+    line-height: 45px;
+}
+.cube {
+    position: relative;
+    width: 9px;
+    height: 9px;
+    margin-right: 10px;
+    overflow: hidden;
+    background-color: red;
+}
+.research-text {
+    font-size: 20px;
+    line-height: 45px;
+    margin: 44px;
+}

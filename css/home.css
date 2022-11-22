@@ -1,0 +1,237 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* GLOBAL */
+div {
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+#header {
+    padding: 8px 16px;
+    /* flex takes no line break by default */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+#header a {
+    display: block;
+}
+#top-logo {
+    margin: 0px 20px;
+    padding: 8px;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    /* do not break word */
+    white-space:nowrap;
+}
+#top-navi {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+#top-navi .top-navigator {
+    margin: 4px 12px;
+    padding: 12px 8px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    cursor: pointer;
+}
+#top-navi .top-navigator:hover {
+    color: black;
+    transition: all 0.5s;
+}
+#top-navi .top-navigator:last-child {
+    margin-right: 20px;
+}
+/* menu */
+#top-navi .menu-bar {
+    position: relative;
+    /* display: inline-block; */
+}
+#top-navi .sub-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* align width */
+    left: 0;
+    right: 0;
+    padding: 12px 8px;
+    z-index: 1;
+}
+#top-navi .sub-menu .menu-option {
+    color: rgba(0, 0, 0, 0.5);
+}
+#top-navi .sub-menu .menu-option:last-child {
+    margin-top: 10px;
+}
+#top-navi .sub-menu .menu-option:hover {
+    color: black;
+}
+#top-navi .menu-bar:hover .sub-menu {
+    visibility: visible;
+}
+
+/* CONTENT */
+/* image */
+#content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#carousel .banner-info {
+    position: absolute;
+    top: 240px;
+    right: 240px;
+}
+#carousel .banner-info p {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+/* carousel */
+#carousel{
+    margin: auto; /* 居中 */
+    margin-top: 40px;
+    width: 1200px; /* 设置宽度 */
+    position: relative; /* 相对定位 */
+    overflow: hidden; /* 超出隐藏 */
+}
+#carousel img{
+    position: absolute; /* 绝对定位 使图片堆叠 */
+    width: 1200px; /* 设定大小 按比例缩放 */
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    transition: all 1.5s; /* 动画 */
+    opacity: 0; /* 隐藏 */
+}
+.imgActive{
+    opacity: 1 !important; /* 显示图片 最高优先级 */
+}
+/* control button */
+#leftArrow,
+#rightArrow{
+    position: absolute;
+    left: 5px;
+    top: 43%;
+    width: 25px;
+    height: 30px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+#rightArrow{
+    left: auto;
+    right: 5px;
+}
+#sliderBtn{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
+}
+.unitBtn{
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.btnActive{
+    background-color: #4C98F7;
+}
+/* slogan */
+#publicity {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0;
+    margin: 40px 44px;
+}
+#publicity .slogan {
+    font-size: 32px;
+    line-height: 60px;
+    color: #1B2B4F;
+}
+#publicity .slogan .separator {
+    color: brown;
+}
+#publicity .brief-introduce {
+    font-size: 20px;
+}
+/* news */
+#publicity .news {
+    margin-top: 36px;
+    text-align: center;
+}
+#publicity .news .news-title {
+    font-size: 24px;
+    color: #1B2B4F;
+    width: 20px;
+    margin: 0 auto;
+    line-height: 24px;
+    list-style: none;
+    word-wrap: break-word;
+}
+#publicity .news .vertical-line {
+    height: 53px;
+    width: 2px;
+    margin: 11px auto 17px;
+    opacity: 0.8;
+    background-color: #1b2b4f;
+    overflow: hidden;
+}
+/* contact */
+#contact {
+    padding: 0px 44px;
+    margin-bottom: 60px;
+    font-weight: lighter;
+}
+#contact .contact-title {
+    padding: 20px ;
+    text-align: center;
+    font-size: 30px;
+}
+#contact .contact-address {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* FOOTER */
+#footer {
+    padding: 24.72px 44px;
+    color: #1B2B4F;
+    background-color: #f5f5f5;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+
+    border-top: 1px solid lightgray;
+}
+#footer span {
+    opacity: 0.3;
+}
