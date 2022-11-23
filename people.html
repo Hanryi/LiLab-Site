@@ -200,6 +200,24 @@
                 </div>
                 <div class="student-card">
                     <div>
+                        <img id="img-qxm" src="img/people/QinXiaoMeng.jpg" />
+                    </div>
+                    <div class="student-brief">
+                        <div class="student-name">Qin XiaoMeng</div>
+                        <div class="student-email">1932747712@qq.com</div>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div>
+                        <img src="img/people/Rabail.jpg" />
+                    </div>
+                    <div class="student-brief">
+                        <div class="student-name">Rabail Afzal</div>
+                        <div class="student-email">rabail.afzal.10@webmail.hzau.edu.cn</div>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div>
                         <img src="img/people/ShangXiaoYang.jpg" />
                     </div>
                     <div class="student-brief">
@@ -290,18 +308,18 @@
                 </div>
                 <div class="student-card">
                     <div>
-                        <img src="img/people/Haroon.jpg" />
-                    </div>
-                    <div class="student-brief">
-                        <div class="student-name">Haroon</div>
-                    </div>
-                </div>
-                <div class="student-card">
-                    <div>
                         <img src="img/people/ChenSiJia.png" />
                     </div>
                     <div class="student-brief">
                         <div class="student-name">Chen SiJia</div>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div>
+                        <img src="img/people/Haroon.jpg" />
+                    </div>
+                    <div class="student-brief">
+                        <div class="student-name">Haroon</div>
                     </div>
                 </div>
                 <div class="student-card">
@@ -366,7 +384,7 @@
                 hr = 1;
             }
         }
-        // Liangchengyong
+        // LiangChengYong
         var img_lcy = document.getElementById("img-lcy");
         var lcy = 1;
         img_lcy.onclick = function() {
@@ -376,6 +394,18 @@
             } else {
                 img_lcy.src = 'img/people/LiangCY.jpg';
                 lcy = 1;
+            }
+        }
+        // QinXiaoMeng
+        var img_qxm = document.getElementById("img-qxm");
+        var qxm = 1;
+        img_qxm.onclick = function() {
+            if (qxm) {
+                img_qxm.src = 'img/people/QinXiaoMeng.jpg';
+                qxm--;
+            } else {
+                img_qxm.src = 'img/people/QinXiaoMeng.gif';
+                qxm = 1;
             }
         }
     }
