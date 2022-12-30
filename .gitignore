@@ -3,4 +3,5 @@ Tools/
 Dataset/
 
 # Images
-img/
+img/*
+!img/qrcode.png
