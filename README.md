@@ -4,3 +4,4 @@
 
 Welcome to lilab !
 
+<img src="E:\LiLab\LabPage\lilab_website\img\qrcode.png" alt="qrcode" style="zoom:50%;" />
