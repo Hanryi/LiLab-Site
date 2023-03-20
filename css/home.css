@@ -239,6 +239,9 @@ a {
 #footer span {
     opacity: 0.3;
 }
+#footer #year {
+    opacity: 1;
+}
 
 @media screen and (max-width: 600px) { 
     #header {
