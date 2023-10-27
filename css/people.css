@@ -4,7 +4,7 @@ a:visited {
 }
 /* leader */
 #leader {
-    padding: 0px 24px;
+    padding: 0px 160px;
     /* font-family: 'Courier New', Courier, monospace; */
 }
 #leader .leader-title {
@@ -78,7 +78,7 @@ a:visited {
 }
 /* Student */
 .student {
-    padding: 20px 24px;
+    padding: 20px 160px;
 }
 .student .student-title {
     font-size: 20px;
@@ -103,26 +103,45 @@ a:visited {
     flex-flow: wrap;
 }
 .student .student-intro .student-card {
-    margin: 20px;
-    width: 180px;
+    margin: 20px 30px;
+    width: 333px;
 }
-.student .student-intro .student-card img {
+.student .student-intro .alumni-card {
+    margin: 20px 60px;
+    width: 120px;
+}
+.student .student-intro img {
     display: block;
     max-width: 100%;
     max-height: 100%;
 }
-.student .student-intro .student-card .student-brief {
+.student .student-intro .student-brief {
+    text-wrap: nowrap;
     margin-top: 10px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    font-family: 'Times New Roman';
 }
-.student .student-intro .student-card .student-brief .student-name {
+.student .student-intro .student-brief .student-name {
+    font-size: 30px;
+    margin: 6px 0px;
+    font-weight: bolder;
+}
+.student .student-intro .student-brief .student-email {
     font-size: 20px;
+    color: gray;
+    font-weight: normal
 }
-.student .student-intro .student-card .student-brief .student-email {
-    font-weight: lighter
+.student .student-intro .student-brief .alumni-name {
+    font-size: 18px;
+    margin: 4px 0px;
+    font-weight: bolder;
+}
+.student .student-intro .student-brief .alumni-email {
+    font-size: 15px;
+    color: gray;
+    font-weight: normal
 }
 
 @media screen and (max-width: 985px) { 
