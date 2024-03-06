@@ -7,7 +7,8 @@
     <title>Li Lab</title>
     <link rel="LiLab Icon" type="image/x-icon" href="img/home/LiLab_icon.ico" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
-    <link rel="stylesheet" type="text/css" href="css/research.css" />
+    <link rel="stylesheet" type="text/css" href="css/publication.css" />
+    <link rel="stylesheet" type="text/css" href="css/news.css" />
 </head>
 <body>
     <div id="header">
@@ -41,41 +42,24 @@
     </div>
 
     <div id="content">
-        <div class="research-title">
-            <div class="cube"></div>
-            <div>
-                <span class="research-header">研究领域</span>
+        
+        <div class="year-line">
+            <div class="year-time">2024</div>
+            <div class="paper-block">
+                <div class="paper">
+                    <a href="./news/2024-02-25.html">
+                        <span class="paper-number"></span>
+                        <div class="news-log">
+                            <span class="paper-name">二〇二三年度工作总结</span>
+                            <span class="paper-name">2024年02月25日</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="research-text">
-            生物大数据及系统生物学。<br />
-            利用生物大数据与人工智能技术解析玉米株型建成分子机制，聚焦青贮玉米生物产量与品质协同变异分子机制研究，为青贮玉米高产优质育种提供理论基础与种质资源。
-        </div>
-        <div class="research-text">
-            Our research topic is centered on biological big data and systems 
-            biology. Using biological big data and artificial intelligence 
-            technology, we are trying to unravel the molecular mechanism 
-            underlying maize plant architecture and the trade-off of silage 
-            maize biomass and quality variation, which provide fundamental 
-            knowledge and germplasm resources for high-yield and high-quality 
-            silage maize breeding.
-        </div>
-    </div>
-    <div id="content">
-        <div class="research-title">
-            <div class="cube"></div>
-            <div>
-                <span class="research-header">On going important projects</span>
-            </div>
-        </div>
-        <div class="research-text">
-            Maize Digital Plant project</br>
-            Maize Pan-Netome project</br>
-            Maize Regulatome project of 2000 TFs</br>
-            Heterosis project based on large-scale populations with multi-omics data</br>
-        </div>
-    </div>
 
+    </div>
+    
     <div id="footer">
         <div id="info">
             <span>地址：湖北省武汉市洪山区狮子山街1号</span>
@@ -89,4 +73,15 @@
     </div>
     <script type="text/javascript" src="js/lilab_website.js"></script>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var paperNameElements = document.querySelectorAll('.paper-name');
+        var paperNumberElements = document.querySelectorAll('.paper-number');
+
+        for (var i = paperNameElements.length - 1; i >= 0; i--) {
+            var paperNumberElement = paperNumberElements[i];
+            paperNumberElement.innerHTML = (paperNameElements.length - i) + ', ';
+        }
+    });
+</script>
 </html>

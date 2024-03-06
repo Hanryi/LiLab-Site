@@ -21,37 +21,43 @@ a:visited {
     margin-right: 10px;
     overflow: hidden;
     background-color: red;
+    min-width: 3px;
 }
 #leader .group-leader {
     margin: 40px 20px;
     text-align: left;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
 }
 #leader .group-leader .leader-photo {
-    width: 275px;
+    max-height: 400px;
 }
 #leader .group-leader .leader-photo img {
-    display: block;
+    max-height: 400px;
+    min-width: 200px;
     width: 100%;
-    max-height: 100%;
 }
 #leader .group-leader .leader-brief {
+    height: 400px;
+    min-width: 176px;
     flex: 1;
     background-color: rgba(211, 211, 211, 0.75);
-    padding: 30px 60px;
+    padding: 0px 60px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 #leader .group-leader .leader-brief .leader-name {
-    font-size: 30px;
-    font-weight: lighter;
+    font-size: 40px;
+    font-weight: normal;
     margin-bottom: 20px;
 }
 #leader .group-leader .leader-brief .leader-info {
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 40px;
+    margin-bottom: 40px;
 }
 .link-area {
     display: flex;
@@ -94,17 +100,22 @@ a:visited {
     margin-right: 10px;
     overflow: hidden;
     background-color: red;
+    min-width: 3px;
 }
 .student .student-intro {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-flow: wrap;
 }
 .student .student-intro .student-card {
     margin: 20px 30px;
     width: 333px;
+    min-width: 150px;
+}
+.student .student-intro .student-card img {
+    width: 100%;
 }
 .student .student-intro .alumni-card {
     margin: 20px 60px;
@@ -131,12 +142,29 @@ a:visited {
 .student .student-intro .student-brief .student-email {
     font-size: 20px;
     color: gray;
-    font-weight: normal
+    font-weight: normal;
+    /* 换行 */
+	overflow: hidden;
+	word-wrap:break-word;
+	white-space:pre-wrap;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
 }
 .student .student-intro .student-brief .alumni-name {
-    font-size: 18px;
+    font-size: 20px;
     margin: 4px 0px;
     font-weight: bolder;
+}
+.student .student-intro .student-brief .graduation {
+    font-size: 15px;
+    color: black;
+    margin: 5px 0px 0px;
+}
+.student .student-intro .student-brief .job {
+    margin: 2px 0px 5px;
+    font-size: 15px;
 }
 .student .student-intro .student-brief .alumni-email {
     font-size: 15px;
@@ -144,14 +172,37 @@ a:visited {
     font-weight: normal
 }
 
-@media screen and (max-width: 985px) { 
-    #leader .group-leader {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+@media screen and (max-width: 1420px) { 
+    #leader .group-leader .leader-brief .leader-name {
+        margin-bottom: 5px;
+    }
+    #leader .group-leader .leader-brief .leader-info {
+        line-height: 35px;
+        margin-bottom: 0px;
+    }
+    .link-area {
+        padding: 5px;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1180px) {
+    #leader .group-leader .leader-brief .leader-name {
+        margin-bottom: 10px;
+    }
+    #leader .group-leader .leader-brief .leader-info {
+        line-height: 40px;
+        margin-bottom: 0px;
+    }
+    #leader .group-leader {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    #leader .group-leader .leader-brief {
+        padding: 30px 20px 15px;
+        height: auto;
+        max-width: 228.3px;
+    }
+
     .link-area .leader-link:not(:first-child) {
         margin-top: 10px;
     }
@@ -162,5 +213,36 @@ a:visited {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 648px) {
+    #leader .group-leader .leader-brief {
+        padding: 25px 12px 10px;
+    }
+    #leader .group-leader .leader-brief .leader-name {
+        font-size: 30px;
+    }
+    #leader .group-leader .leader-brief .leader-info {
+        line-height: 35px;
+        margin-bottom: 0px;
+    }
+    #leader .group-leader .leader-photo {
+        display: flex;
+    }
+    .link-area .leader-link {
+        display: flex;
+        flex-direction: column;
+    }
+    .link-area .leader-link .icon {
+        width: 15px;
+        margin-bottom: 5px;
+    }
+    .link-area .leader-link .leader-email {
+        font-size: 12px;
+    }
+
+    .student .student-intro .student-brief .student-email {
+        font-size: 15px;
     }
 }

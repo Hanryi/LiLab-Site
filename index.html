@@ -18,6 +18,9 @@
             <a class="top-navigator" href="./index.html">
                 <span>Home</span>
             </a>
+            <a class="top-navigator" href="./news.html">
+                <span>News</span>
+            </a>
             <a class="top-navigator" href="./research.html">
                 <span>Research</span>
             </a>
@@ -27,7 +30,7 @@
             <div class="top-navigator menu-bar">
                 <span>Resource</span>
                 <div class="sub-menu">
-                    <a class="menu-option" href="./dataset.html">data set</a>
+                    <a class="menu-option" href="./dataset.html">dataset</a>
                     <a class="menu-option" href="./tools.html">tools</a>
                 </div>
             </div>
@@ -65,10 +68,10 @@
                     systems biology
                 </span>
             </div>
-            <div class="news">
+            <!-- <div class="news">
                 <div class="news-title">News</div>
                 <div class="vertical-line"></div>
-            </div>
+            </div> -->
         </div>
         <div id="contact">
             <div class="contact-title">Contact Us</div>
@@ -110,12 +113,13 @@
     var btnList = []; // 右下角切换按钮组
     
     function slide(targetIndex = curIndex + 1){
-        curIndex = targetIndex % imgArr.length; // 获取当前index
+        curIndex = (targetIndex + imgArr.length) % imgArr.length; // 使用加上数组长度再取模的方法确保负数的正确处理
         imgArr.forEach((v) => v.className = "" ); // 设置其他图片隐藏
         imgArr[curIndex] .className = "imgActive"; // 设置当前index图片显示
         btnList.forEach(v => v.className = "unitBtn") // 设置其他按钮为灰色
         btnList[curIndex] .className = "unitBtn btnActive"; // 设置当前按钮为蓝色
     }
+
 
     function createBtnGroup(carousel,config){
         document.getElementById("leftArrow").addEventListener('click',(e) => { 
